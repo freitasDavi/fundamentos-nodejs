@@ -1,8 +1,16 @@
+import { Specification } from "../model/Specification";
 
+interface ICreateSpecificationDTO {
+	name: string;
+	description: string;
+}
 
 interface ISpecificationsRepository {
-	name: string;
+	
+	create(dto: ICreateSpecificationDTO): void;
+
+	findByName(name: string): Specification;
 }
 
 
-export { ISpecificationsRepository };
+export { ISpecificationsRepository, ICreateSpecificationDTO };
