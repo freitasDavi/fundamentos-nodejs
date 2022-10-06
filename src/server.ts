@@ -5,9 +5,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerFile from "./swagger.json";
 
 // Database
-import { createConnection } from "./database/data-source";
-
-createConnection();
+import "./database";
 
 const app = express();
 
