@@ -11,13 +11,12 @@ class CreateUserUseCase  {
 		private readonly usersRepository: IUsersRepository
 	) {}
 
-	async execute ({ driver_license, email, name, password, username }: ICreateUserDTO): Promise<void> {
+	async execute ({ driver_license, email, name, password }: ICreateUserDTO): Promise<void> {
 		await this.usersRepository.create({
 			name,
 			driver_license,
 			email,
-			password,
-			username
+			password
 		});
 	}
 }
